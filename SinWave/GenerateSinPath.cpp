@@ -29,7 +29,7 @@ int main() {
 		pos = -MAX_SPEED * cos((2 * M_PI * i) / TOTAL_DURATION) + MAX_SPEED;
 
 		cout << "Position: " << pos << "   Velocity: " << vel << endl;
-		outputCSV << pos << "," << vel;
+		outputCSV << pos << "," << vel << "," << pos << "," << vel;
 		if (i != totalNumberOfSteps) outputCSV << '\n';
 	}
 

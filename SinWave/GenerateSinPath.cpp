@@ -1,10 +1,10 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-	std::cout << "HEllo";
+	cout << "HEllo";
 
-	std::cin.get();
-	while (true) {
-
-	}
+	cin.get();
+	return 0;
 }

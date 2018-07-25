@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <math.h>
+#include <fstream>
 
 using namespace std;
 
@@ -12,6 +13,12 @@ const static double STEP_DURATION = 1.0;
 const static double TOTAL_DURATION = 150;
 
 int main() {
+	ofstream outputCSV("SinwaveMP.csv");
+
+	if (!outputCSV) {
+		cerr << "File not found";
+		exit(1);
+	}
 
 	int totalNumberOfSteps = TOTAL_DURATION / STEP_DURATION;
 
@@ -22,8 +29,10 @@ int main() {
 		pos = -MAX_SPEED * cos((2 * M_PI * i) / TOTAL_DURATION) + MAX_SPEED;
 
 		cout << "Position: " << pos << "   Velocity: " << vel << endl;
+		outputCSV << pos << "," << vel;
+		if (i != totalNumberOfSteps) outputCSV << '\n';
 	}
 
-	cin.get();
+	
 	return 0;
 }
